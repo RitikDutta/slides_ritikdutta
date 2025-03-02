@@ -38,12 +38,18 @@ const slideshowsProjects = {
 };
 
 const slideshowsBusinessReports = {
-    5: {
+    7: {
         title: "Truck Delivery Report",
         slug: "truck_delivery_report",
         thumbnail: "https://i.imgur.com/Ack4rc9.png",
         iframeSrc: "https://docs.google.com/presentation/d/1xIuSAjDo6AU5qGjhWt2uXhb1WjfbdN7xdqYGr-hpdjw/embed?start=false&loop=false&delayms=3000"
-    }
+    },
+    8: {
+            title: "Education",
+            slug: "Education",
+            thumbnail: "https://i.imgur.com/Ack4rc9.png",
+            iframeSrc: "https://docs.google.com/presentation/d/e/2PACX-1vTZMJW1hYvzSRRwFdzA_VqVzZ7TipwZGwYRTqyP_p5A-EfcdQ9F5eFUZIIvQcGX-crOc-tjbgB_VpV5/embed?start=false&loop=false&delayms=3000"
+    },
 };
 
 // Function to retrieve slideshow by slug
