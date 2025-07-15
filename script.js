@@ -29,6 +29,12 @@ const slideshowsProjects = {
         thumbnail: "https://raw.githubusercontent.com/RitikDutta/slides_ritikdutta/refs/heads/master/media/cwem_lite.png",
         iframeSrc: "https://docs.google.com/presentation/d/e/2PACX-1vS3GkC1uIy5Un0eV7eTQctNbKDzR0FJFxWovXjK7flGDrYAKyNh0hNYUlfJgTXk1HrHRXnjJSraMB6z/embed?start=false&loop=false&delayms=3000"
     },
+    5: {
+        title: "CWEM-Technical",
+        slug: "cwem-technical",
+        thumbnail: "https://raw.githubusercontent.com/RitikDutta/slides_ritikdutta/refs/heads/master/media/cwem_technical.jpg",
+        iframeSrc: "https://docs.google.com/presentation/d/e/2PACX-1vTrhNkfV2I3eV7dD4lKBxGMgnfSp0vRSZ4JVCGRo1F5Ayg8nMEWnh53ABqXNIy00bBRKJInXcqRHT2q/pubembed?start=false&loop=false&delayms=3000"
+    },
     6: {
         title: "TimeStream",
         slug: "timestream",
