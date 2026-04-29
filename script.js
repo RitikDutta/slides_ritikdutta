@@ -42,10 +42,10 @@ const slideshowsProjects = {
         iframeSrc: "https://docs.google.com/presentation/d/e/2PACX-1vRwYbxowSm9DPbSnYy9dCZIeAykEyDFb3RBVh8-ntOd8qMM4-tBEf975X4jo1RzBW3tSAgtMizXGAw-/embed?start=false&loop=false&delayms=3000"
     },
     8: {
-        title: "Aelum",
+        title: "Aelum Consulting",
         slug: "aelum",
         thumbnail: "https://raw.githubusercontent.com/RitikDutta/slides_ritikdutta/refs/heads/master/media/timestream.png",
-        iframeSrc: "https://docs.google.com/presentation/d/e/2PACX-1vQMsp7C8Y4AbpQmqLtB6W0JeGMHZmAK7ZM3cqzV0l0drEhurUKrNSvkQhiT-BZM7nVhVqrs_gtSdfcx/pub?start=false&loop=false&delayms=60000"
+        iframeSrc: "https://docs.google.com/presentation/d/e/2PACX-1vQMsp7C8Y4AbpQmqLtB6W0JeGMHZmAK7ZM3cqzV0l0drEhurUKrNSvkQhiT-BZM7nVhVqrs_gtSdfcx/pubembed?start=false&loop=false&delayms=3000"
     }
 };
 
