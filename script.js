@@ -40,12 +40,21 @@ const slideshowsProjects = {
         slug: "timestream",
         thumbnail: "https://raw.githubusercontent.com/RitikDutta/slides_ritikdutta/refs/heads/master/media/timestream.png",
         iframeSrc: "https://docs.google.com/presentation/d/e/2PACX-1vRwYbxowSm9DPbSnYy9dCZIeAykEyDFb3RBVh8-ntOd8qMM4-tBEf975X4jo1RzBW3tSAgtMizXGAw-/embed?start=false&loop=false&delayms=3000"
-    },
-    8: {
+    }
+};
+
+const slideshowsServiceNow = {
+    1: {
         title: "Aelum Consulting",
         slug: "aelum",
         thumbnail: "https://raw.githubusercontent.com/RitikDutta/slides_ritikdutta/refs/heads/master/media/ael.png",
         iframeSrc: "https://docs.google.com/presentation/d/e/2PACX-1vTznlqIz52_WwDaOeJJOCdnpnL6okh49g6Irb7bzH9CtJlMnOI8kvf0l-NYE7hXvGsaiCR8KP6Z9Ruo/pubembed?start=false&loop=false&delayms=3000"
+    },
+    2: {
+        title: "AI in ServiceNow",
+        slug: "ai-in-servicenow",
+        thumbnail: "media/servicenow_ai.png",
+        iframeSrc: "https://docs.google.com/presentation/d/e/2PACX-1vTFFfI_OhEG7eDE4LOZgDekrPpwOHaefA8anClMcYmDFBfOaSAdd-xzzWrvYKPCdYEa9tWWnIKFDkzN/pubembed?start=false&loop=false&delayms=3000"
     }
 };
 
@@ -72,6 +81,12 @@ function getSlideshowBySlug(slug) {
             return { slideshow: slideshowsProjects[id], section: 'projects', id: id };
         }
     }
+    // Search in slideshowsServiceNow
+    for (let id in slideshowsServiceNow) {
+        if (slideshowsServiceNow[id].slug === slug) {
+            return { slideshow: slideshowsServiceNow[id], section: 'servicenow', id: id };
+        }
+    }
     // Search in slideshowsBusinessReports
     for (let id in slideshowsBusinessReports) {
         if (slideshowsBusinessReports[id].slug === slug) {
@@ -84,6 +99,7 @@ function getSlideshowBySlug(slug) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const gridProjects = document.getElementById('grid-projects');
+    const gridServiceNow = document.getElementById('grid-servicenow');
     const gridBusinessReports = document.getElementById('grid-business-reports');
 
     // Function to create a thumbnail element
@@ -122,6 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
         gridProjects.appendChild(thumbnail);
     });
 
+    // Generate "ServiceNow" thumbnails
+    Object.keys(slideshowsServiceNow).forEach((id) => {
+        const slideshow = slideshowsServiceNow[id];
+        const thumbnail = createThumbnail(id, slideshow, 'servicenow');
+        gridServiceNow.appendChild(thumbnail);
+    });
+
     // Generate "Business Reports" thumbnails
     Object.keys(slideshowsBusinessReports).forEach((id) => {
         const slideshow = slideshowsBusinessReports[id];
@@ -156,6 +179,8 @@ function openSlideshow(id, section) {
     let slideshow;
     if (section === 'projects') {
         slideshow = slideshowsProjects[id];
+    } else if (section === 'servicenow') {
+        slideshow = slideshowsServiceNow[id];
     } else if (section === 'business') {
         slideshow = slideshowsBusinessReports[id];
     }
