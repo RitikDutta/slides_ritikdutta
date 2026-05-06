@@ -2,7 +2,7 @@ const slideshowsProjects = {
     1: {
         title: "My Journey",
         slug: "my_journey",
-        thumbnail: "https://i.imgur.com/fINt0h8.png",
+        thumbnail: "media/my_journey.png",
         iframeSrc: "https://docs.google.com/presentation/d/1VBVok0t7ldnVEjWNeTI_LhpW1itW85IfBMoydv5mAdY/embed?start=false&loop=false&delayms=3000"
     },
     2: {
@@ -43,7 +43,7 @@ const slideshowsProjects = {
     }
 };
 
-const slideshowsServiceNow = {
+const slideshowsBusinessReports = {
     1: {
         title: "Aelum Consulting",
         slug: "aelum",
@@ -55,20 +55,17 @@ const slideshowsServiceNow = {
         slug: "ai-in-servicenow",
         thumbnail: "media/servicenow_ai.png",
         iframeSrc: "https://docs.google.com/presentation/d/e/2PACX-1vTFFfI_OhEG7eDE4LOZgDekrPpwOHaefA8anClMcYmDFBfOaSAdd-xzzWrvYKPCdYEa9tWWnIKFDkzN/pubembed?start=false&loop=false&delayms=3000"
-    }
-};
-
-const slideshowsBusinessReports = {
+    },
     7: {
         title: "Truck Delivery Report",
         slug: "truck_delivery_report",
-        thumbnail: "https://i.imgur.com/Ack4rc9.png",
+        thumbnail: "media/business_report.png",
         iframeSrc: "https://docs.google.com/presentation/d/1xIuSAjDo6AU5qGjhWt2uXhb1WjfbdN7xdqYGr-hpdjw/embed?start=false&loop=false&delayms=3000"
     },
     8: {
             title: "Education",
             slug: "Education",
-            thumbnail: "https://i.imgur.com/Ack4rc9.png",
+            thumbnail: "media/business_report.png",
             iframeSrc: "https://docs.google.com/presentation/d/e/2PACX-1vTZMJW1hYvzSRRwFdzA_VqVzZ7TipwZGwYRTqyP_p5A-EfcdQ9F5eFUZIIvQcGX-crOc-tjbgB_VpV5/embed?start=false&loop=false&delayms=3000"
     },
 };
@@ -79,12 +76,6 @@ function getSlideshowBySlug(slug) {
     for (let id in slideshowsProjects) {
         if (slideshowsProjects[id].slug === slug) {
             return { slideshow: slideshowsProjects[id], section: 'projects', id: id };
-        }
-    }
-    // Search in slideshowsServiceNow
-    for (let id in slideshowsServiceNow) {
-        if (slideshowsServiceNow[id].slug === slug) {
-            return { slideshow: slideshowsServiceNow[id], section: 'servicenow', id: id };
         }
     }
     // Search in slideshowsBusinessReports
@@ -99,7 +90,6 @@ function getSlideshowBySlug(slug) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const gridProjects = document.getElementById('grid-projects');
-    const gridServiceNow = document.getElementById('grid-servicenow');
     const gridBusinessReports = document.getElementById('grid-business-reports');
 
     // Function to create a thumbnail element
@@ -138,13 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
         gridProjects.appendChild(thumbnail);
     });
 
-    // Generate "ServiceNow" thumbnails
-    Object.keys(slideshowsServiceNow).forEach((id) => {
-        const slideshow = slideshowsServiceNow[id];
-        const thumbnail = createThumbnail(id, slideshow, 'servicenow');
-        gridServiceNow.appendChild(thumbnail);
-    });
-
     // Generate "Business Reports" thumbnails
     Object.keys(slideshowsBusinessReports).forEach((id) => {
         const slideshow = slideshowsBusinessReports[id];
@@ -179,8 +162,6 @@ function openSlideshow(id, section) {
     let slideshow;
     if (section === 'projects') {
         slideshow = slideshowsProjects[id];
-    } else if (section === 'servicenow') {
-        slideshow = slideshowsServiceNow[id];
     } else if (section === 'business') {
         slideshow = slideshowsBusinessReports[id];
     }
